@@ -6,49 +6,73 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0002_load_initial_data'),
+        ("home", "0002_load_initial_data"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Cb',
+            name="Cb",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('real', models.BigIntegerField()),
-                ('theorique', models.BigIntegerField()),
-                ('nbTickets', models.BigIntegerField()),
-                ('idTelecollect', models.BigIntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("real", models.BigIntegerField()),
+                ("theorique", models.BigIntegerField()),
+                ("nbTickets", models.BigIntegerField()),
+                ("idTelecollect", models.BigIntegerField()),
             ],
         ),
         migrations.CreateModel(
-            name='Cheque',
+            name="Cheque",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('real', models.BigIntegerField()),
-                ('theorique', models.BigIntegerField()),
-                ('nb', models.BigIntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("real", models.BigIntegerField()),
+                ("theorique", models.BigIntegerField()),
+                ("nb", models.BigIntegerField()),
             ],
         ),
         migrations.CreateModel(
-            name='Espece',
+            name="Espece",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cent', models.BigIntegerField()),
-                ('cent2', models.BigIntegerField()),
-                ('cent5', models.BigIntegerField()),
-                ('cent10', models.BigIntegerField()),
-                ('cent50', models.BigIntegerField()),
-                ('euro1', models.BigIntegerField()),
-                ('euro2', models.BigIntegerField()),
-                ('euro5', models.BigIntegerField()),
-                ('euro10', models.BigIntegerField()),
-                ('euro20', models.BigIntegerField()),
-                ('euro50', models.BigIntegerField()),
-                ('euro100', models.BigIntegerField()),
-                ('euro200', models.BigIntegerField()),
-                ('euro500', models.BigIntegerField()),
-                ('real', models.BigIntegerField()),
-                ('theorique', models.BigIntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("cent", models.BigIntegerField()),
+                ("cent2", models.BigIntegerField()),
+                ("cent5", models.BigIntegerField()),
+                ("cent10", models.BigIntegerField()),
+                ("cent50", models.BigIntegerField()),
+                ("euro1", models.BigIntegerField()),
+                ("euro2", models.BigIntegerField()),
+                ("euro5", models.BigIntegerField()),
+                ("euro10", models.BigIntegerField()),
+                ("euro20", models.BigIntegerField()),
+                ("euro50", models.BigIntegerField()),
+                ("euro100", models.BigIntegerField()),
+                ("euro200", models.BigIntegerField()),
+                ("euro500", models.BigIntegerField()),
+                ("real", models.BigIntegerField()),
+                ("theorique", models.BigIntegerField()),
             ],
         ),
     ]
