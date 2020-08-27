@@ -1,3 +1,12 @@
+from rest_framework import viewsets
+from rest_framework import authentication
+from .serializers import (
+    CbSerializer,
+    ChequeSerializer,
+    CustomTextSerializer,
+    EspeceSerializer,
+    HomePageSerializer,
+)
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.permissions import IsAdminUser
@@ -11,7 +20,7 @@ from home.api.v1.serializers import (
     HomePageSerializer,
     UserSerializer,
 )
-from home.models import CustomText, HomePage
+from home.models import Cb, Cheque, CustomText, Espece, HomePage
 
 
 class SignupViewSet(ModelViewSet):
@@ -49,3 +58,30 @@ class HomePageViewSet(ModelViewSet):
     authentication_classes = (SessionAuthentication, TokenAuthentication)
     permission_classes = [IsAdminUser]
     http_method_names = ["get", "put", "patch"]
+
+
+class EspeceViewSet(viewsets.ModelViewSet):
+    serializer_class = EspeceSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Espece.objects.all()
+
+
+class ChequeViewSet(viewsets.ModelViewSet):
+    serializer_class = ChequeSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Cheque.objects.all()
+
+
+class CbViewSet(viewsets.ModelViewSet):
+    serializer_class = CbSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Cb.objects.all()
